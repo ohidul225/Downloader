@@ -1,8 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-class VideoDownloadScreen extends StatelessWidget {
-  const VideoDownloadScreen({super.key});
+class VideoLibraryScreen extends StatelessWidget {
+  const VideoLibraryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

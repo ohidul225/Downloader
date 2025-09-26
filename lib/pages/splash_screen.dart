@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'video_download_screen.dart';
+import 'VideoLibraryScreen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Pre-cache the image when the widget is built
     precacheImage(const AssetImage("assets/icon/icon.jpg"), context);
-    
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: AnimatedSplashScreen(
@@ -38,7 +38,7 @@ class SplashScreen extends StatelessWidget {
             ),
           ],
         ),
-        nextScreen: VideoDownloadScreen(),
+        nextScreen: VideoLibraryScreen(),
         splashTransition: SplashTransition.fadeTransition,
         duration: 3000,
         backgroundColor: Colors.white,
