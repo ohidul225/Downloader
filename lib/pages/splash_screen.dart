@@ -1,7 +1,7 @@
+import 'package:downloader/pages/video_download_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'VideoLibraryScreen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -38,7 +38,7 @@ class SplashScreen extends StatelessWidget {
             ),
           ],
         ),
-        nextScreen: VideoLibraryScreen(),
+        nextScreen: VideoDownloadScreen(),
         splashTransition: SplashTransition.fadeTransition,
         duration: 3000,
         backgroundColor: Colors.white,
