@@ -8,19 +8,41 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Pre-cache the image when the widget is built
+    precacheImage(const AssetImage("assets/icon/icon.jpg"), context);
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: AnimatedSplashScreen(
-        splash: Lottie.asset(
-          "assets/splash.json",
-          repeat: true,
-          width: 450,
-          height: 450,
+        splash: Stack(
+          alignment: Alignment.center,
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: MediaQuery.of(context).size.width * 0.8,
+              child: Lottie.asset(
+                "assets/wave_animation.json",
+                repeat: true,
+                fit: BoxFit.contain,
+              ),
+            ),
+            // ignore: sized_box_for_whitespace
+            Container(
+              width: MediaQuery.of(context).size.width * 0.3,
+              height: MediaQuery.of(context).size.width * 0.3,
+              child: Image.asset(
+                "assets/icon/icon.jpg",
+                fit: BoxFit.contain,
+                cacheWidth: 300, // Optimize by specifying cache size
+              ),
+            ),
+          ],
         ),
         nextScreen: VideoDownloadScreen(),
         splashTransition: SplashTransition.fadeTransition,
-        duration: 900,
+        duration: 3000,
         backgroundColor: Colors.white,
+        splashIconSize: MediaQuery.of(context).size.width * 0.8,
       ),
     );
   }

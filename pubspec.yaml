@@ -25,7 +25,8 @@ flutter:
   uses-material-design: true
   
   assets:
-    - assets/splash.json
+    - assets/wave_animation.json
+    - assets/icon/icon.jpg
     # Add other assets here
 
 flutter_launcher_icons: # Fixed indentation and placement
