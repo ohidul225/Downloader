@@ -1,4 +1,4 @@
-package com.example.downloader
+package com.ohidul.downloader
 
 import io.flutter.embedding.android.FlutterActivity
 

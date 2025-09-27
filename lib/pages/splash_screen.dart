@@ -40,7 +40,7 @@ class SplashScreen extends StatelessWidget {
         ),
         nextScreen: VideoDownloadScreen(),
         splashTransition: SplashTransition.fadeTransition,
-        duration: 3000,
+        duration: 1500,
         backgroundColor: Colors.white,
         splashIconSize: MediaQuery.of(context).size.width * 0.8,
       ),

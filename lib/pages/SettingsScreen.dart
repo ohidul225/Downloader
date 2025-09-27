@@ -18,7 +18,7 @@ class SettingsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(40),
                     bottomRight: Radius.circular(40)),
-                color: Color.fromARGB(255, 82, 86, 143),
+                color: Color.fromARGB(255, 67, 0, 0),
               ),
               child: Center(
                 child: Row(

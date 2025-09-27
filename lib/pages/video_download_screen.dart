@@ -62,7 +62,7 @@ class _VideoDownloadScreenState extends State<VideoDownloadScreen> {
         body: _screens[_currentIndex],
         bottomNavigationBar: CurvedNavigationBar(
           backgroundColor: Colors.white,
-          color: const Color.fromARGB(255, 82, 86, 143),
+          color: const Color.fromARGB(255, 67, 0, 0),
           animationDuration: const Duration(milliseconds: 300),
           index: _currentIndex,
           onTap: (index) {
