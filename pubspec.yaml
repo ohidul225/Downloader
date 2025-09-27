@@ -29,6 +29,10 @@ flutter:
   assets:
     - assets/wave_animation.json
     - assets/icon/icon.jpg
+    - assets/images/facebook.png
+    - assets/images/instagram.png
+    - assets/images/tiktok.png
+    - assets/images/youtube.png
     # Add other assets here
 
 flutter_launcher_icons: # Fixed indentation and placement
