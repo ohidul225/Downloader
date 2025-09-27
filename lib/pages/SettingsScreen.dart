@@ -6,16 +6,43 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 181, 208, 231),
-      body: const Center(
-        child: Text(
-          'Settings Content',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.black54,
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          //for facebook
+          Center(
+            child: Container(
+              height: 150,
+              width: 900,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(40),
+                    bottomRight: Radius.circular(40)),
+                color: Color.fromARGB(255, 82, 86, 143),
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.settings,
+                      size: 40,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "  Settings",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

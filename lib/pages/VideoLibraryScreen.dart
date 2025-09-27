@@ -6,17 +6,50 @@ class VideoLibraryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 181, 208, 231),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
+          Center(
+            child: Container(
+              height: 150,
+              width: 900,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(40),
+                    bottomRight: Radius.circular(40)),
+                color: Color.fromARGB(255, 82, 86, 143),
+              ),
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.video_library_outlined,
+                      size: 40,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "  Video Download Section",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+
           //for facebook
           Center(
             child: Container(
-              margin: EdgeInsets.only(top: 80),
+              margin: EdgeInsets.only(top: 15),
               height: 85,
               width: 350,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 147, 167, 185),
+                color: const Color.fromARGB(255, 120, 123, 165),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -66,7 +99,7 @@ class VideoLibraryScreen extends StatelessWidget {
               height: 85,
               width: 350,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 147, 167, 185),
+                color: const Color.fromARGB(255, 120, 123, 165),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -117,7 +150,7 @@ class VideoLibraryScreen extends StatelessWidget {
               height: 85,
               width: 350,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 147, 167, 185),
+                color: const Color.fromARGB(255, 120, 123, 165),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -167,7 +200,7 @@ class VideoLibraryScreen extends StatelessWidget {
               height: 85,
               width: 350,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 147, 167, 185),
+                color: const Color.fromARGB(255, 120, 123, 165),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -208,7 +241,7 @@ class VideoLibraryScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
+          )
         ],
       ),
     );

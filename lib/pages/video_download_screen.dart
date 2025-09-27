@@ -58,11 +58,11 @@ class _VideoDownloadScreenState extends State<VideoDownloadScreen> {
         return true; // Exit app
       },
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 181, 208, 231),
+        backgroundColor: Colors.white,
         body: _screens[_currentIndex],
         bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: const Color.fromARGB(255, 181, 208, 231),
-          color: const Color.fromARGB(255, 147, 167, 185),
+          backgroundColor: Colors.white,
+          color: const Color.fromARGB(255, 82, 86, 143),
           animationDuration: const Duration(milliseconds: 300),
           index: _currentIndex,
           onTap: (index) {
