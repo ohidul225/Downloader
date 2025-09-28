@@ -1,5 +1,6 @@
-import 'package:downloader/pages/theme_manager.dart';
+import 'package:downloader/pages/global_theme_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class VideoLibraryScreen extends StatelessWidget {
@@ -24,8 +25,9 @@ class VideoLibraryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeManager = Provider.of<GlobalThemeManager>(context);
     return Scaffold(
-      backgroundColor: AppTheme.backgroundColor,
+      backgroundColor: themeManager.backgroundColor,
       body: Column(
         children: [
           Container(
@@ -69,7 +71,7 @@ class VideoLibraryScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               height: 85,
               decoration: BoxDecoration(
-                color: AppTheme.containerColor,
+                color: themeManager.containerColor,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -93,7 +95,7 @@ class VideoLibraryScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppTheme.textColor,
+                            color: themeManager.textColor,
                           ),
                         ),
                         SizedBox(height: 5),
@@ -101,7 +103,7 @@ class VideoLibraryScreen extends StatelessWidget {
                           "Download your video from facebook",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppTheme.textColor,
+                            color: themeManager.textColor,
                           ),
                         ),
                       ],
@@ -111,7 +113,7 @@ class VideoLibraryScreen extends StatelessWidget {
                     padding: EdgeInsets.only(right: 15),
                     child: Icon(
                       Icons.arrow_forward_ios,
-                      color: AppTheme.textColor,
+                      color: themeManager.textColor,
                       size: 20,
                     ),
                   ),
@@ -127,7 +129,7 @@ class VideoLibraryScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               height: 85,
               decoration: BoxDecoration(
-                color: AppTheme.containerColor,
+                color: themeManager.containerColor,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -152,7 +154,7 @@ class VideoLibraryScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppTheme.textColor,
+                            color: themeManager.textColor,
                           ),
                         ),
                         SizedBox(height: 5),
@@ -160,7 +162,7 @@ class VideoLibraryScreen extends StatelessWidget {
                           "Download your video from instagram",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppTheme.textColor,
+                            color: themeManager.textColor,
                           ),
                         ),
                       ],
@@ -170,7 +172,7 @@ class VideoLibraryScreen extends StatelessWidget {
                     padding: EdgeInsets.only(right: 15),
                     child: Icon(
                       Icons.arrow_forward_ios,
-                      color: AppTheme.textColor,
+                      color: themeManager.textColor,
                       size: 20,
                     ),
                   ),
@@ -186,7 +188,7 @@ class VideoLibraryScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               height: 85,
               decoration: BoxDecoration(
-                color: AppTheme.containerColor,
+                color: themeManager.containerColor,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -210,7 +212,7 @@ class VideoLibraryScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppTheme.textColor,
+                            color: themeManager.textColor,
                           ),
                         ),
                         SizedBox(height: 5),
@@ -218,7 +220,7 @@ class VideoLibraryScreen extends StatelessWidget {
                           "Download your video from tiktok",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppTheme.textColor,
+                            color: themeManager.textColor,
                           ),
                         ),
                       ],
@@ -228,7 +230,7 @@ class VideoLibraryScreen extends StatelessWidget {
                     padding: EdgeInsets.only(right: 15),
                     child: Icon(
                       Icons.arrow_forward_ios,
-                      color: AppTheme.textColor,
+                      color: themeManager.textColor,
                       size: 20,
                     ),
                   ),
@@ -245,7 +247,7 @@ class VideoLibraryScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               height: 85,
               decoration: BoxDecoration(
-                color: AppTheme.containerColor,
+                color: themeManager.containerColor,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -269,7 +271,7 @@ class VideoLibraryScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppTheme.textColor,
+                            color: themeManager.textColor,
                           ),
                         ),
                         SizedBox(height: 5),
@@ -277,7 +279,7 @@ class VideoLibraryScreen extends StatelessWidget {
                           "Download your video from youtube",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppTheme.textColor,
+                            color: themeManager.textColor,
                           ),
                         ),
                       ],
@@ -287,7 +289,7 @@ class VideoLibraryScreen extends StatelessWidget {
                     padding: EdgeInsets.only(right: 15),
                     child: Icon(
                       Icons.arrow_forward_ios,
-                      color: AppTheme.textColor,
+                      color: themeManager.textColor,
                       size: 20,
                     ),
                   ),

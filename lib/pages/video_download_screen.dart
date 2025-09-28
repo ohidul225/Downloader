@@ -2,8 +2,9 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:downloader/pages/MusicScreen.dart';
 import 'package:downloader/pages/SettingsScreen.dart';
 import 'package:downloader/pages/VideoLibraryScreen.dart';
-import 'package:downloader/pages/theme_manager.dart';
+import 'package:downloader/pages/global_theme_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class VideoDownloadScreen extends StatefulWidget {
   const VideoDownloadScreen({super.key});
@@ -25,6 +26,7 @@ class _VideoDownloadScreenState extends State<VideoDownloadScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final themeManager = Provider.of<GlobalThemeManager>(context);
     // ignore: deprecated_member_use
     return WillPopScope(
       onWillPop: () async {
@@ -52,11 +54,11 @@ class _VideoDownloadScreenState extends State<VideoDownloadScreen> {
         return true;
       },
       child: Scaffold(
-        backgroundColor: AppTheme.backgroundColor, // ← CHANGED THIS LINE
+        backgroundColor: themeManager.backgroundColor,
         body: _screens[_currentIndex],
         bottomNavigationBar: CurvedNavigationBar(
           backgroundColor:
-              AppTheme.backgroundColor, // ← This was already correct
+              themeManager.backgroundColor, // ← This was already correct
           color: const Color.fromARGB(255, 67, 0, 0),
           animationDuration: const Duration(milliseconds: 300),
           index: _currentIndex,

@@ -15,6 +15,8 @@ dependencies:
   animated_splash_screen: ^1.3.0
   curved_navigation_bar: ^1.0.6
   url_launcher: ^6.1.11
+  shared_preferences: ^2.2.2
+  provider: ^6.0.5
   # Add other dependencies here
 
 dev_dependencies:

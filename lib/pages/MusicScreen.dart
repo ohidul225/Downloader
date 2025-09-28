@@ -1,5 +1,6 @@
-import 'package:downloader/pages/theme_manager.dart';
+import 'package:downloader/pages/global_theme_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MusicScreen extends StatelessWidget {
@@ -24,8 +25,9 @@ class MusicScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeManager = Provider.of<GlobalThemeManager>(context);
     return Scaffold(
-      backgroundColor: AppTheme.backgroundColor,
+      backgroundColor: themeManager.backgroundColor,
       body: Column(
         children: [
           // Your header code remains the same...
@@ -70,7 +72,7 @@ class MusicScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               height: 85,
               decoration: BoxDecoration(
-                color: AppTheme.containerColor,  
+                color: themeManager.containerColor,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -94,7 +96,7 @@ class MusicScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppTheme.textColor, 
+                            color: themeManager.textColor,
                           ),
                         ),
                         SizedBox(height: 5),
@@ -102,7 +104,7 @@ class MusicScreen extends StatelessWidget {
                           "Download your music from facebook",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppTheme.textColor, 
+                            color: themeManager.textColor,
                           ),
                         ),
                       ],
@@ -112,7 +114,7 @@ class MusicScreen extends StatelessWidget {
                     padding: EdgeInsets.only(right: 15),
                     child: Icon(
                       Icons.arrow_forward_ios,
-                      color: AppTheme.textColor, 
+                      color: themeManager.textColor,
                       size: 20,
                     ),
                   ),
@@ -128,7 +130,7 @@ class MusicScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               height: 85,
               decoration: BoxDecoration(
-                color: AppTheme.containerColor, // ← Changed
+                color: themeManager.containerColor, // ← Changed
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -153,7 +155,7 @@ class MusicScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppTheme.textColor, // ← Changed
+                            color: themeManager.textColor, // ← Changed
                           ),
                         ),
                         SizedBox(height: 5),
@@ -161,7 +163,7 @@ class MusicScreen extends StatelessWidget {
                           "Download your music from instagram",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppTheme.textColor, // ← Changed
+                            color: themeManager.textColor, // ← Changed
                           ),
                         ),
                       ],
@@ -171,7 +173,7 @@ class MusicScreen extends StatelessWidget {
                     padding: EdgeInsets.only(right: 15),
                     child: Icon(
                       Icons.arrow_forward_ios,
-                      color: AppTheme.textColor, // ← Changed
+                      color: themeManager.textColor, // ← Changed
                       size: 20,
                     ),
                   ),
@@ -187,7 +189,7 @@ class MusicScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               height: 85,
               decoration: BoxDecoration(
-                color: AppTheme.containerColor, // ← Changed
+                color: themeManager.containerColor, // ← Changed
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -211,7 +213,7 @@ class MusicScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppTheme.textColor, // ← Changed
+                            color: themeManager.textColor, // ← Changed
                           ),
                         ),
                         SizedBox(height: 5),
@@ -219,7 +221,7 @@ class MusicScreen extends StatelessWidget {
                           "Download your music from tiktok",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppTheme.textColor, // ← Changed
+                            color: themeManager.textColor, // ← Changed
                           ),
                         ),
                       ],
@@ -229,7 +231,7 @@ class MusicScreen extends StatelessWidget {
                     padding: EdgeInsets.only(right: 15),
                     child: Icon(
                       Icons.arrow_forward_ios,
-                      color: AppTheme.textColor, // ← Changed
+                      color: themeManager.textColor, // ← Changed
                       size: 20,
                     ),
                   ),
@@ -245,7 +247,7 @@ class MusicScreen extends StatelessWidget {
               margin: EdgeInsets.all(15),
               height: 85,
               decoration: BoxDecoration(
-                color: AppTheme.containerColor, // ← Changed
+                color: themeManager.containerColor, // ← Changed
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -269,7 +271,7 @@ class MusicScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppTheme.textColor, // ← Changed
+                            color: themeManager.textColor, // ← Changed
                           ),
                         ),
                         SizedBox(height: 5),
@@ -277,7 +279,7 @@ class MusicScreen extends StatelessWidget {
                           "Download your music from youtube",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppTheme.textColor, // ← Changed
+                            color: themeManager.textColor, // ← Changed
                           ),
                         ),
                       ],
@@ -287,7 +289,7 @@ class MusicScreen extends StatelessWidget {
                     padding: EdgeInsets.only(right: 15),
                     child: Icon(
                       Icons.arrow_forward_ios,
-                      color: AppTheme.textColor, // ← Changed
+                      color: themeManager.textColor, // ← Changed
                       size: 20,
                     ),
                   ),

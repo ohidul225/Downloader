@@ -1,4 +1,6 @@
+import 'package:downloader/pages/global_theme_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'theme_manager.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -14,11 +16,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final themeManager = Provider.of<GlobalThemeManager>(context);
+
     return Scaffold(
-      backgroundColor: AppTheme.backgroundColor,
+      backgroundColor: themeManager.backgroundColor,
       body: Column(
         children: [
-          // Header - This will now update when theme changes
           Center(
             child: Container(
               height: 150,
@@ -28,8 +31,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   bottomLeft: Radius.circular(40),
                   bottomRight: Radius.circular(40),
                 ),
-                color:
-                    Color.fromARGB(255, 67, 0, 0), // Keep your original color
+                color: Color.fromARGB(255, 67, 0, 0),
               ),
               child: Center(
                 child: Row(
@@ -53,7 +55,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ),
           ),
-
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(20.0),
@@ -67,14 +68,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: AppTheme.textColor,
+                        color: themeManager.textColor,
                       ),
                     ),
                   ),
                   SizedBox(height: 10),
                   Container(
                     decoration: BoxDecoration(
-                      color: AppTheme.containerColor,
+                      color: themeManager.containerColor,
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: SwitchListTile(
@@ -83,15 +84,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          color: AppTheme.textColor,
+                          color: themeManager.textColor,
                         ),
                       ),
-                      value: AppTheme.isDarkMode,
+                      value: themeManager.isDarkMode,
                       onChanged: (value) {
-                        setState(() {
-                          // ← This is important!
-                          AppTheme.isDarkMode = value;
-                        });
+                        themeManager.setDarkMode(
+                            value); // ← This will update entire app
                       },
                       activeThumbColor: Color.fromARGB(255, 67, 0, 0),
                     ),
@@ -107,14 +106,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: AppTheme.textColor,
+                        color: themeManager.textColor,
                       ),
                     ),
                   ),
                   SizedBox(height: 10),
                   Container(
                     decoration: BoxDecoration(
-                      color: AppTheme.containerColor,
+                      color: themeManager.containerColor,
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Column(
@@ -125,7 +124,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
-                              color: AppTheme.textColor,
+                              color: themeManager.textColor,
                             ),
                           ),
                           value: wifiOnly,
@@ -148,7 +147,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
-                              color: AppTheme.textColor,
+                              color: themeManager.textColor,
                             ),
                           ),
                           value: askEveryTime,
@@ -163,8 +162,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ],
                     ),
                   ),
-
-                  Spacer(),
 
                   // Reset Button
                   SizedBox(
