@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:downloader/pages/MusicScreen.dart';
 import 'package:downloader/pages/SettingsScreen.dart';
 import 'package:downloader/pages/VideoLibraryScreen.dart';
+import 'package:downloader/pages/theme_manager.dart';
 import 'package:flutter/material.dart';
 
 class VideoDownloadScreen extends StatefulWidget {
@@ -14,8 +15,6 @@ class VideoDownloadScreen extends StatefulWidget {
 class _VideoDownloadScreenState extends State<VideoDownloadScreen> {
   int _currentIndex = 0;
   DateTime? _lastBackPressTime;
-
-  // Track the last visited index before current one
   int _lastIndex = 0;
 
   final List<Widget> _screens = [
@@ -29,22 +28,18 @@ class _VideoDownloadScreenState extends State<VideoDownloadScreen> {
     // ignore: deprecated_member_use
     return WillPopScope(
       onWillPop: () async {
-        // If user is NOT on home screen (index 0), go back to last screen
         if (_currentIndex != 0) {
           setState(() {
-            _currentIndex = _lastIndex; // Go back to last visited screen
-            _lastIndex = 0; // Reset last index
+            _currentIndex = _lastIndex;
+            _lastIndex = 0;
           });
-          return false; // Don't exit app
+          return false;
         }
 
-        // If user is on home screen, check for double back press to exit
         final now = DateTime.now();
         if (_lastBackPressTime == null ||
             now.difference(_lastBackPressTime!) > const Duration(seconds: 2)) {
           _lastBackPressTime = now;
-
-          // Show snackbar message
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text('Press back again to exit app'),
@@ -52,24 +47,23 @@ class _VideoDownloadScreenState extends State<VideoDownloadScreen> {
               behavior: SnackBarBehavior.floating,
             ),
           );
-          return false; // Don't exit app
+          return false;
         }
-
-        return true; // Exit app
+        return true;
       },
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppTheme.backgroundColor, // ← CHANGED THIS LINE
         body: _screens[_currentIndex],
         bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Colors.white,
+          backgroundColor:
+              AppTheme.backgroundColor, // ← This was already correct
           color: const Color.fromARGB(255, 67, 0, 0),
           animationDuration: const Duration(milliseconds: 300),
           index: _currentIndex,
           onTap: (index) {
-            // Store current index as last index before changing
             setState(() {
-              _lastIndex = _currentIndex; // Remember where user came from
-              _currentIndex = index; // Go to new screen
+              _lastIndex = _currentIndex;
+              _currentIndex = index;
             });
           },
           items: const [
