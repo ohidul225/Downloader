@@ -163,6 +163,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   ),
 
+                  Spacer(),
+
                   // Reset Button
                   SizedBox(
                     width: double.infinity,
