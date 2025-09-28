@@ -14,4 +14,4 @@
 
 You can download the latest APK here:
 
-[Download APK](link-to-your-apk)
+[Download APK](https://github.com/ohidul225/Downloader/releases/tag/v2.0.0)
