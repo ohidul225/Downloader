@@ -1,19 +1,31 @@
-// global_theme_manager.dart - SIMPLE VERSION (no shared_preferences)
+// global_theme_manager.dart
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class GlobalThemeManager with ChangeNotifier {
   bool _isDarkMode = false;
 
+  GlobalThemeManager() {
+    _loadTheme();
+  }
+
   bool get isDarkMode => _isDarkMode;
 
-  void setDarkMode(bool value) {
+  Future<void> _loadTheme() async {
+    final prefs = await SharedPreferences.getInstance();
+    _isDarkMode = prefs.getBool('isDarkMode') ?? false;
+    notifyListeners();
+  }
+
+  Future<void> setDarkMode(bool value) async {
     _isDarkMode = value;
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('isDarkMode', value);
     notifyListeners();
   }
 
   void toggleTheme() {
-    _isDarkMode = !_isDarkMode;
-    notifyListeners();
+    setDarkMode(!_isDarkMode);
   }
 
   Color get backgroundColor {
